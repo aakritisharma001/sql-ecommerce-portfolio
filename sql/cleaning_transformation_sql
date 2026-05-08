@@ -1,0 +1,75 @@
+/* cleaned data transformation */
+CREATE OR REPLACE TABLE ecommerce.olist_orders_clean AS
+
+SELECT
+  
+  order_id,
+  customer_id,
+
+  order_status,
+
+  order_purchase_timestamp,
+  order_approved_at,
+  order_delivered_carrier_date,
+  order_delivered_customer_date,
+  order_estimated_delivery_date,
+
+  DATE_TRUNC(order_purchase_timestamp, MONTH) AS order_month,
+  DATE_TRUNC(order_purchase_timestamp, QUARTER) AS order_quarter,
+  FORMAT_TIMESTAMP('%A', order_purchase_timestamp) AS day_of_week,
+
+  DATE_DIFF(
+    order_delivered_customer_date,
+    order_purchase_timestamp,
+    DAY
+  ) AS delivery_days,
+
+  DATE_DIFF(
+    order_delivered_customer_date,
+    order_estimated_delivery_date,
+    DAY
+  ) AS days_vs_estimate,
+
+  DATE_DIFF(
+    order_approved_at,
+    order_purchase_timestamp,
+    HOUR
+  ) AS approval_hours,
+
+  CASE
+    WHEN order_delivered_customer_date > order_estimated_delivery_date THEN TRUE
+    ELSE FALSE
+  END AS is_late,
+
+  CASE
+    WHEN order_status = 'delivered'
+     AND order_delivered_customer_date IS NOT NULL THEN TRUE
+    ELSE FALSE
+  END AS is_delivered,
+
+  CASE
+    WHEN order_status = 'canceled' THEN TRUE
+    ELSE FALSE
+  END AS is_canceled
+
+FROM ecommerce.olist_orders
+
+WHERE order_purchase_timestamp IS NOT NULL;
+
+
+/* check */
+
+SELECT
+  COUNT(*) AS total_rows,
+  COUNTIF(is_late = TRUE) AS late_orders,
+  COUNTIF(is_delivered = TRUE) AS delivered_orders,
+  COUNTIF(is_canceled = TRUE) AS canceled_orders,
+  ROUND(AVG(delivery_days), 1) AS avg_delivery_days,
+  ROUND(AVG(approval_hours), 1) AS avg_approval_hours
+FROM ecommerce.olist_orders_clean;
+
+
+
+
+
+

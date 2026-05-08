@@ -1,0 +1,15 @@
+CREATE OR REPLACE TABLE ecommerce.olist_orders (
+  order_id                      STRING    NOT NULL,
+  customer_id                   STRING    NOT NULL,
+  order_status                  STRING,
+  order_purchase_timestamp      TIMESTAMP,
+  order_approved_at             TIMESTAMP,
+  order_delivered_carrier_date  TIMESTAMP,
+  order_delivered_customer_date TIMESTAMP,
+  order_estimated_delivery_date TIMESTAMP
+);
+
+SELECT
+  COUNT(*) AS total_rows,
+  COUNT(DISTINCT order_id) AS unique_orders
+FROM ecommerce.olist_orders;

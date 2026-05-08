@@ -1,0 +1,38 @@
+/* monthly order volume trend */
+
+select 
+date_trunc(order_purchase_timestamp, MONTH) as order_month
+from ecommerce.olist_orders
+group by order_month
+order by order_month;
+
+/* late delivery rate overall and by status */
+
+select
+order_status,
+count(*) as total_orders,
+round(count(*) * 100.0/ sum(count(*)) over(), 2) as pct_of_total
+from ecommerce.olist_orders
+group by order_status
+order by total_orders desc;
+
+/* average delivery time */
+
+select
+count(*) as total_delivered,
+countif(order_delivered_customer_date > order_estimated_delivery_date) as late_orders,
+countif(order_delivered_customer_date <= order_estimated_delivery_date) as on_time_orders,
+round(
+  countif(order_delivered_customer_date > order_estimated_delivery_date) * 100.0 / count(*), 2
+) as late_pct,
+round(avg(
+  date_diff(order_delivered_customer_date, order_purchase_timestamp, day)
+), 1) as avg_delivery_days
+from ecommerce.olist_orders
+where ordeR_status = 'delivered'
+and order_delivered_customer_date is not null;
+
+
+
+
+

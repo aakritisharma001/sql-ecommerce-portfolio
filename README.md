@@ -113,7 +113,7 @@ revenue per region?**
 
 ---
 ## Project 2 — SQL JOINs: Revenue by Category & Region
-
+![Revenue by Category](screenshots/revenue_by_category.png)
 ### Tables joined
 | Table | Role |
 |---|---|

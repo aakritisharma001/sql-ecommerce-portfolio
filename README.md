@@ -112,6 +112,26 @@ Join the orders table with `olist_order_items`, `olist_customers`, and
 revenue per region?**
 
 ---
+## Project 2 — SQL JOINs: Revenue by Category & Region
+
+### Tables joined
+| Table | Role |
+|---|---|
+| olist_orders | Base table — order status and dates |
+| olist_order_items | Price per item per order |
+| olist_products | Product category name |
+| olist_customers | Customer state/region |
+
+### Key findings
+- Top revenue category: [your result here]
+- Highest revenue state: [your result here]
+- Average order value across all categories: [your result here]
+
+### SQL concepts demonstrated
+- 4-table LEFT JOIN
+- CTE to separate JOIN logic from aggregation
+- GROUP BY across two dimensions
+- COUNT(DISTINCT) to avoid double counting
 
 ## Author
 Aakriti Sharma

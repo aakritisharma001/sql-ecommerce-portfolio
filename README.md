@@ -144,4 +144,5 @@ Aakriti Sharma
 | ------- | ------- |
 | [1068-product-sales-analysis-i](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1068-product-sales-analysis-i/) | Easy |
 | [1070-product-sales-analysis-iii](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1070-product-sales-analysis-iii/) | Medium |
+| [1075-project-employees-i](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1075-project-employees-i/) | Easy |
 <!---LeetCode Topics End-->

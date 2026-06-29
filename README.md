@@ -136,3 +136,11 @@ revenue per region?**
 ## Author
 Aakriti Sharma
 [LinkedIn](www.linkedin.com/in/aakriti-sharma-21039a386) · [GitHub](https://github.com/aakritisharma001)
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Database
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1068-product-sales-analysis-i](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1068-product-sales-analysis-i/) | Easy |
+<!---LeetCode Topics End-->

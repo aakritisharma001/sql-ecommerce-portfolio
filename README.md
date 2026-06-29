@@ -143,4 +143,5 @@ Aakriti Sharma
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1068-product-sales-analysis-i](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1068-product-sales-analysis-i/) | Easy |
+| [1070-product-sales-analysis-iii](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1070-product-sales-analysis-iii/) | Medium |
 <!---LeetCode Topics End-->

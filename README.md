@@ -151,4 +151,5 @@ Aakriti Sharma
 | [1158-market-analysis-i](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1158-market-analysis-i/) | Medium |
 | [1164-product-price-at-a-given-date](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1164-product-price-at-a-given-date/) | Medium |
 | [1174-immediate-food-delivery-ii](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1174-immediate-food-delivery-ii/) | Medium |
+| [1179-reformat-department-table](https://github.com/aakritisharma001/sql-ecommerce-portfolio/tree/main/1179-reformat-department-table/) | Easy |
 <!---LeetCode Topics End-->
